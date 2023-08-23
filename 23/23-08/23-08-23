@@ -1,0 +1,40 @@
+palabra= input(str("Ingrese una palabra"))
+vocales=0
+#revisar caracter por caracter#
+for char in palabra:
+#verificar cada vocal#
+    if char == "a" or char == "A":
+        vocales += 1
+#para usar elif el primero debe ser if#
+    elif char == "e" or char == "E":
+        vocales += 1
+    elif char == "i" or char == "I":
+        vocales += 1
+    elif char == "o" or char == "O":
+        vocales += 1
+    elif char == "u" or char == "U":
+        vocales += 1
+#Imprimir # de vocales#
+print("Cantidad de vocales:", vocales)
+
+
+#sacar solamente la palabra cali#
+name = "Cali, Colombia"
+ciudad = ""
+for char in name:
+    if char == ",":
+        break
+    ciudad += char
+print(ciudad)
+
+ 
+ 
+
+
+
+
+
+
+
+
+      4 
