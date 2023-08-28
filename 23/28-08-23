@@ -2,7 +2,7 @@
 for char in Str
 
 
-
+DESARROLLO PARCIAL:
 #Punto 1 parcial#
 def countDNA(dnastring):
     letra_A = 0
@@ -21,7 +21,29 @@ def countDNA(dnastring):
     print("Cantidad de A:", letra_A, "Cantidad de T:", letra_T, "Cantidad de C:", letra_C, "Cantidad de G:", letra_G)
     print("Cantidad total de bases en la cadena:",len(adn))
 adn = input("Ingrese la cadena de ADN: ")
-
 countDNA(adn)
 
+
+#Punto 2 parcial#
+def calculateAverages():
+    acumulador_A = 0
+    acumulador_B = 0
+    contador_A = 0
+    contador_B = 0
+    while True:
+        concentracion = float(input("Ingrese el valor de concentración: "))
+        compuesto = input("Ingrese el tipo de compuesto (A, B o -1): ")
+        if compuesto == "A":
+            acumulador_A = acumulador_A + concentracion
+            contador_A += 1
+        elif compuesto == "B":
+            acumulador_B = acumulador_B + concentracion
+            contador_B += 1
+        elif compuesto == "-1":
+            break
+        #Se podría utilizar un else para revisar si no es A ni b ni -1#
+    print("Promedio de compuesto A: ", acumulador_A/contador_A)
+    print("Promedio de compuesto B: ", acumulador_B/contador_B)
+calculateAverages()
+            
 
