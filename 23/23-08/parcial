@@ -1,0 +1,20 @@
+pUNTO 1
+
+def isDNAString(string):
+    letra_ATCG = 0
+    diferente = 0
+    for char in string:
+        if char == "A" or char == "T" or char == "C" or char == "G":
+            letra_ATCG += 1
+        else:
+            diferente += 1
+    if(diferente >= 1):
+        print("no es secuencia de ADN", diferente)
+    else:
+        print("Si es secuencia de ADN")
+
+
+        
+string = input("Ingrese cadena da ADN")
+isDNAString(string)
+
