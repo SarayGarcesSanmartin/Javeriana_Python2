@@ -18,3 +18,31 @@ def isDNAString(string):
 string = input("Ingrese cadena da ADN")
 isDNAString(string)
 
+PUNTO 2 
+def showPositions(dnaString):
+    basenitrogenada = input("Ingrese la base nitrogenada")
+    n = 0
+    if basenitrogenada == "A" or basenitrogenada == "T" or basenitrogenada == "C" or basenitrogenada == "G":
+        for char in dnaString:
+            n+=1
+            if char == "A" and basenitrogenada == "A":
+                print("Base encontrada en la posicion:", n)
+            elif char == "T"and basenitrogenada == "T":
+                print("Base encontrada en la posicion:", n)
+            elif char == "C"and basenitrogenada == "C":
+                print("Base encontrada en la posicion:", n)
+            elif char == "G"and basenitrogenada == "G":
+                print("Base encontrada en la posicion:", n)
+                
+    else:
+        print("Base invalida")
+
+
+
+        
+dnaString = input("Ingrese cadena de ADN")
+
+showPositions(dnaString)
+
+
+
