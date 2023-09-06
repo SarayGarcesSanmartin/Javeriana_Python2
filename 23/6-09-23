@@ -1,0 +1,29 @@
+PUNTO 1:
+
+def averagePopulation(listaDatos):
+    """ Función que almacena información ingresada por el usuario en una lista
+    vacía y calcula su promedio, también puede eliminar datos.
+    Argumentos:
+        listaDatos[list]: lista vacia usada para almacenar los datos
+
+    Retorno:
+        listaDatos [list]: Lista con datos ingresados con el promedio en
+        la última posición
+    """
+    while True:
+        dato = int(input("Ingrese un dato: "))
+        if dato == -1:
+            listaDatos.pop()
+            print(listaDatos)
+        elif dato <= -2:
+            break
+        else:
+            listaDatos.append(dato)
+            print(listaDatos)
+
+    promedio = sum(listaDatos) / len(listaDatos)
+    listaDatos.append(promedio)
+    return listaDatos
+            
+#El argumento pasa a tomar el0 valor de una lista vacía#
+averagePopulation([])
