@@ -1,0 +1,54 @@
+#EJERCICIO JUEGO PIEDRA, PAPEL O TIJERAS#
+
+#impirtar libreria#
+import random
+
+#Definir lista y contadores#
+lista_opciones = ["Piedra", "Papel", "Tijera"]
+nVictorias = 0
+nDerrotas = 0
+nTurnos = 1
+
+#Verificar que aún ninguno ha gaanado#
+while nVictorias < 3 and nDerrotas < 3:
+    opcion_pj = int(input("Ingrese un número: 0(Piedra), 1(Papel), 2(Tijera): "))
+    opcion_pc = random.randint(0, 2)
+    print("Turno número", nTurnos)
+    print("Opción elegida por el jugador:", lista_opciones[opcion_pj])
+    print("Opción elegida por el PC:", lista_opciones[opcion_pc])
+
+#Para empate#
+    if opcion_pj == opcion_pc:
+        print("Empate")
+
+#Para formas de ganar#
+    elif opcion_pj == 0 and opcion_pc == 2:
+        print("Ganaste la ronda")
+        nVictorias += 1
+
+    elif opcion_pj == 1 and opcion_pc == 0:
+        print("Ganaste la ronda")
+        nVictorias += 1
+
+    elif opcion_pj == 2 and opcion_pc == 1:
+        print("Ganaste la ronda")
+        nVictorias += 1
+
+#Para perder#
+    else:
+        print("Perdiste la ronda")
+        nDerrotas += 1
+
+#Se suma 1 al turno cada vez que pase cualquiera de las opciones anteriores#
+    nTurnos += 1
+
+#Cuando hay 3 victorias, se termina el juego y dice si se gana o pierde#
+if nVictorias == 3:
+    print("Ganaste el juego")
+else:
+    print("Perdiste el juego")
+
+
+
+        
+    
