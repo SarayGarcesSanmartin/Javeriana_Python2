@@ -1,0 +1,13 @@
+def intDivision(num, den):
+    #Verificar tipo de num (que sea int o float)#
+    if (type(num) == int or type(num) == float) and (type(den) == int or type(den) == float):
+        #Verificar valores#
+        if den != 0:
+            return num//den
+        return "Error: División entre 0"
+    return "Error: Verifica tipo de datos"
+    
+print(intDivision(5, 0))
+
+
+
