@@ -50,5 +50,18 @@ else:
 
 
 
-        
-    
+
+#EJERCICIO ADN RANDOM#
+import random
+
+def generateRandomDNA(dnaLen):
+    bases_nit = ["A", "T", "C", "G"]
+    if dnaLen < 0:
+        return "-1"
+    else:
+        for i in range(dnaLen):
+            print(random.choice(bases_nit))
+
+dnaLen = int(input("Ingrese un valor entero para la longitud de la cadena de ADN: "))
+
+generateRandomDNA(dnaLen)
