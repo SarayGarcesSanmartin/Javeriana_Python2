@@ -1,3 +1,4 @@
+#EJERCICIO 1#
 def intDivision(num, den):
     #Verificar tipo de num (que sea int o float)#
     if (type(num) == int or type(num) == float) and (type(den) == int or type(den) == float):
@@ -10,4 +11,15 @@ def intDivision(num, den):
 print(intDivision(5, 0))
 
 
+#EJERCICIO 2#
+def sumLista(lista):
+    if type(lista) != list or lista == []:
+        return 0
+    suma = 0
+    for number in lista:
+        if type(number) == int or type(number) == float:
+            suma += number # suma = suma + number
+    return suma
+
+print(sumLista(["hola", "l", "gd", "gg", "rte"]))
 
