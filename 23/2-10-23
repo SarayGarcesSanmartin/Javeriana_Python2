@@ -1,0 +1,34 @@
+EJERCICIO EXCEPCIONES
+
+def safeOperations():
+    try
+#definimos los números
+      dividendo = int(input("Ingrese un dividendo: "))
+      divisor = int(input("Ingrese un divisor: "))
+
+    except ValueError:
+#Si hay error en el tipo de datos
+        print("Los datos son incorrectos")
+#Pedir otros valores
+        dividendo = int(input("Ingrese otro dividendo: "))
+        divisor = int(input("Ingrese otro divisor: "))
+#Variables para la lista de operaciones
+    suma = dividendo + divisor
+    resta = dividendo - divisor
+    multiplicacion = dividendo * divisor
+#La posible excepción para la divisón, las otras operaciones no tienen excepciones
+    try:
+        division = dividendo / divisor
+
+    except ZeroDivisionError:
+#Posible excepcion si el divisor es 0
+        print("El divisor debe ser distinto de 0")
+        divisor = int(input("Ingrese otro divisor: "))
+#Se debe volver a incluir la variable de la división
+        division = dividendo / divisor
+#Definir lista
+    lista = [suma, resta, multiplicacion, division]
+#Retornar lista
+    return lista
+#Se debe incluir print para que pueda imprimir la función
+print(safeOperations())
