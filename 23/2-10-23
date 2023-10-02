@@ -1,4 +1,4 @@
-EJERCICIO EXCEPCIONES
+EJERCICIO EXCEPCIONES 1
 
 def safeOperations():
     try
@@ -32,3 +32,23 @@ def safeOperations():
     return lista
 #Se debe incluir print para que pueda imprimir la función
 print(safeOperations())
+
+EJERCICIO EXCEPCIONES 2
+def safeSumList(lista):
+#Contador para sumar
+    suma = 0
+#Para recorrer la lista
+    for i in lista:
+        try:
+#Se aumenta el contador
+            suma += i
+
+        except TypeError:
+#Para continuar revisando los elementos
+            continue
+
+    return suma
+
+        
+lista = [3, 5, "hl", 7, "df", 5, 1.1, [4, 3, "w"]]
+print(safeSumList(lista))
