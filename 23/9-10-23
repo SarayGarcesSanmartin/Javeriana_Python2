@@ -49,4 +49,53 @@ def generarArchivo():
         FileNotFoundError
 
 EJEMPLO 1
+import random
+
+def generateRandomDNA(dnaLen):
+    """This function creates a random DNA string with lenght
+    defined by dnaLen.
+    Args:
+        dnaLen[int]: Lenght of the desired DNA string.
+    Return:
+        -1[int]: If lenght < 0.
+        dnaString[str]: Randomly generated DNA string."""
+
+    if dnaLen < 0:
+        return -1
+
+    dnaString = ""
+
+    for i in range(dnaLen):
+        randomNumber = random.randint(1, 4)
+        if randomNumber == 1:
+            dnaString += "A"
+        elif randomNumber == 2:
+            dnaString += "C"
+        elif randomNumber == 3:
+            dnaString += "G"
+        else:
+            if tipo == 1:
+                dnaString += "T"
+            elif tipo == 2:
+                dnaString += "U"
+            
+    return dnaString
+
+def archivoADNoARN(ncadenas):
+    nombreFile = input("Nombre de archivo: ")
+    nombreFile = nombreFile + ".txt"
+    try:
+        file = open(nombreFile, "w")
+    except FileNotFoundError:
+        print("Archivo no existe")
+    for i in range(ncadenas):
+        opcion = random.randint(1,2)
+        longitud = random.randint(16,48)
+        string = generateADNoARN(longitud, opcion)
+        stringWrite += string + "\n"
+    file.write(stringWrite)
+    file.close()
+    print("Archivo", nombreFile, "generado")
+
+archivoADNoARN(10)
 
