@@ -1,0 +1,24 @@
+LECTURA DE ARCHIVOS
+try:
+    file=open("Archivo Ejemplo.txt", "r")
+except FileNotFoundError:
+    print("File does not exist")
+print(file.read())
+
+PARA LEER SOLO CIERTO NÚMERO DE CARACTERES
+try:
+    file=open("Archivo Ejemplo.txt", "r")
+except FileNotFoundError:
+    print("File does not exist")
+print(file.read(5))
+
+ESCRITURA DE ARCHIVOS
+try:
+    file=open("Archivo Ejemplo.txt", "w")
+except FileNotFoundError:
+    print("File does not exist")
+
+lineToWrite = "Hola a todos"
+file.write(lineToWrite)
+file.close()
+    
