@@ -21,4 +21,32 @@ except FileNotFoundError:
 lineToWrite = "Hola a todos"
 file.write(lineToWrite)
 file.close()
-    
+
+EJERCICIO
+import random
+def generateRandomDNA(dnaLen):
+    babases_nit = ["A", "T", "C", "G"]
+        for i in range(dnaLen):
+            print(random.choice(bases_nit))
+
+dnaLen = int(input("Ingrese un valor entero para la longitud de la cadena de ADN
+
+def generarArchivo():
+#.upper es para convertirlo a mayúscula#
+    opcion = input(str("Elegir ADN o ARN")).upper()
+    if option == "ADN":
+        cadena= generateRandomDNA("ADN") #Función genera cadena genética
+    elif option == "ARN":
+        cadena= generateRandomDNA("ARN)
+    else:
+        ("Vuelva a intentarlo")
+    try:
+        file = open("String.txt", "w")
+        file.write(cadena)
+        file.close()
+        print("Archivo generado")
+    except:
+        FileNotFoundError
+
+EJEMPLO 1
+
