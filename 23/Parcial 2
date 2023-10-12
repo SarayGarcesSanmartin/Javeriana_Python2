@@ -1,0 +1,115 @@
+PUNTO 1
+def determineHelix(string):
+    """ Función que recibe una cadena de texto que puede ser ADN o ARN e
+identifica de que tipo es.
+Arg:
+    string[str]: Cadena de texto que recibe cadena de ADN o ARN.
+Return:
+    -1[int]: Si no es cadena de texto, es una cadena vacía, si no es cadena
+    de ADN ni de ARN
+    1[int]: Si es cadena de ADN
+    2[int]: Si es cadena de ARN
+    
+"""
+#Verifica que sea tipo string"
+    if type(string) != str:
+        return "-1"
+#Verifica que no sea un string vacío#
+    if len(string) == 0:
+        return -1
+#Recorre cada caracter#
+    for base in string:
+        base_nit = ""
+#Verifica la presencia de cada base#
+        if base == "A":
+            base_nit += "A"
+        elif base == "C":
+            base_nit += "C"
+        elif base == "G":
+            base_nit += "G"
+#Si tiene una T, es ADN#
+        elif base == "T":
+            base_nit += "T"
+            return 1
+#Si tiene una U, es ARN#
+        elif base == "U":
+            base_nit += "U"
+            return 2
+#Si tiene algo diferente a las letras anteriores, no es ADN o ARN#
+        else:
+            return -1
+            
+
+print(determineHelix("AUGCG"))
+
+PUNTO 2
+def countDNA(stringList):
+    adenina = 0
+    citocina = 0
+    guanina = 0
+    timina = 0
+
+    for cadena in range (len(stringList)):
+
+        if "A" not in stringList[cadena] or "C" not in stringList[cadena] or "G" not in stringList[cadena] or "T" not in stringList[cadena]:
+            continue
+        
+        else:
+            for base in range (len(stringList[cadena])):
+
+                if stringList[cadena][base] == "A":
+                    adenina += 1
+                elif stringList[cadena][base] == "C":
+                    citocina += 1
+                elif stringList[cadena][base] == "G":
+                    guanina += 1
+                elif stringList[cadena][base] == "T":
+                    timina += 1
+
+    bases_nit = [adenina, citocina, guanina, timina]
+    return bases_nit
+
+
+print (countDNA(["ACTGTACATG", "FGAHJ", "CTG"]))
+
+PUNTO 3
+def genetic_helixes(db_list):
+    if type(db_list) != list:
+        return -1
+    if db_list == []:
+        return -1
+    for element in db_list:
+        genetic_results = []
+        for base in element:
+            if base != "A" or base != "C" or base != "G" or base != "T" or base != "U":
+                    genetic_results.append("N/A")
+            elif base == "A" or base == "C" or base == "G" and base == "T":
+                adn_complementario = ""
+                if base == "A":
+                    adn_complementario += "T"
+                elif base == "C":
+                    adn_complementario += "G"
+                elif base == "G":
+                    adn_complementario += "C"
+                elif base == "T":
+                    adn_complementario += "A"
+                    genetic_results.append(adn_complementario)
+            elif base == "A" or base == "C" or base == "G" and base == "U":
+                arn_inverso = ""
+                if base == "A":
+                    arn_inverso += "G"
+                elif base == "C":
+                    arn_inversoo += "A"
+                elif base == "G":
+                    arn_inverso += "U"
+                elif base == "U":
+                    arn_inverso += "C"
+                    genetic_results.append(arn_inverso)
+                
+                
+    return genetic_results
+            
+          
+print(genetic_helixes(["ATCG", "AUGCGU", "DFO"]))
+
+
