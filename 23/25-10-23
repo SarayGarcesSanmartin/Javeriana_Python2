@@ -1,0 +1,14 @@
+EJERCICIO 1R
+sumVectors <- function(vector1, vector2){
+  vectorSuma <- vector1 + vector2
+  
+  return(vectorSuma)
+  
+}
+
+
+vectorSumatoria = c(1, 2, 3)
+vectorSumatoria2 = c(4, 5, 6)
+
+sumVectors(vector1 = vectorSumatoria, vector2 = vectorSumato   ria2)
+
